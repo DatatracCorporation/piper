@@ -10,7 +10,7 @@
 .DEFAULT_GOAL := help
 .PHONY = fmt vet all clean git-config deps help
 
-VERSION := 1.1.1
+VERSION := 1.1.2
 BUMPVERSION_PART ?= patch
 
 ################################################################################

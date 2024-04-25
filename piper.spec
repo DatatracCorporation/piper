@@ -10,7 +10,7 @@
 
 Summary:         Utility for log rotation for 12-factor apps
 Name:            piper
-Version:         1.1.1
+Version:         1.1.2
 Release:         0%{?dist}
 Group:           Development/Tools
 License:         MIT
