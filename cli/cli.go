@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/gongled/piper/logging"
+	"github.com/datatrac/piper/logging"
 
 	"pkg.re/essentialkaos/ek.v9/fmtc"
 	"pkg.re/essentialkaos/ek.v9/fmtutil"

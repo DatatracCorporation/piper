@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/gongled/piper/handler"
+	"github.com/datatrac/piper/handler"
 )
 
 // ////////////////////////////////////////////////////////////////////////////////// //
@@ -290,10 +290,13 @@ func (l *FileLogger) RemoveStaleLogs() {
 
 // RollOver rotates logs
 func (l *FileLogger) RollOver() error {
-	l.w.Close()
-
 	if err := l.RenameLog(); err != nil {
-		return err
+		// Ignore the case where the file has already been moved
+		if !os.IsNotExist(err) {
+			e := err.(*os.LinkError)
+			fmt.Printf("Failed to rotate log: %s\n", e.Err)
+			return err
+		}
 	}
 
 	if l.GetMaxBackupIndex() > 0 || l.GetMaxTimeInterval() > 0 {

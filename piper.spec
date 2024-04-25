@@ -63,6 +63,10 @@ rm -rf %{buildroot}
 ###############################################################################
 
 %changelog
+* Thu Apr 25 2024 Jim Patterson <jim.patterson@datatrac.com> - 1.1.1-0
+- Add support for external rotation programs by allowing file to have
+  already been moved when signal arrives.
+
 * Mon Nov 20 2017 Gleb Goncharov <gongled@gongled.ru> - 1.1.1-0
 - Updated to the latest release.
 
